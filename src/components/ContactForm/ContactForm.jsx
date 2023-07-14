@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledBtn, StyledForm } from './ContactForm.styled';
-import { selectContacts } from 'components/redux/selectors';
-import { addContact } from 'components/redux/operations';
+import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
@@ -16,7 +16,7 @@ export const ContactForm = () => {
     if (name === 'name') {
       setName(value);
     } else if (name === 'number') {
-      setPhone(value);
+      setNumber(value);
     }
   };
 
@@ -31,7 +31,7 @@ export const ContactForm = () => {
       resetForm();
       return;
     }
-    dispatch(addContact({ name, phone }))
+    dispatch(addContact({ name, number }))
       .unwrap()
       .then(() => {
         toast.success(`${name} is added to the contacts!`, {
@@ -49,7 +49,7 @@ export const ContactForm = () => {
 
   const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -71,7 +71,7 @@ export const ContactForm = () => {
         name="number"
         pattern="^\d{3}(-?\d{2}){1,2}$"
         title="Phone number should contain seven digits. For example 123-45-67 or 1234567."
-        value={phone}
+        value={number}
         required
       />
       <StyledBtn type="submit">Add contact</StyledBtn>

@@ -13,18 +13,16 @@ const contactSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.fulfilled, (state, action) => {
-        state.items = action.payload;
+      .addCase(fetchContacts.fulfilled, (state, { payload }) => {
+        state.items = payload;
         state.isLoading = false;
         state.error = null;
       })
       .addCase(addContact.fulfilled, (state, { payload }) => {
         state.items.push(payload);
       })
-      .addCase(deleteContact.fulfilled, (state, action) => {
-        state.items = state.items.filter(
-          contact => contact.id !== action.payload
-        );
+      .addCase(deleteContact.fulfilled, (state, { payload }) => {
+        state.items = state.items.filter(contact => contact.id !== payload);
       })
       .addMatcher(
         action => action.type.endsWith('/pending'),
