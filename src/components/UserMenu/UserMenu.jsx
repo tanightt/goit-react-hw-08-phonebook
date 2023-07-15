@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { logoutThunk } from 'redux/auth/authOperations';
 import { selectUser } from 'redux/selectors';
 import { LogoutBtn } from './UserMenu.styled';

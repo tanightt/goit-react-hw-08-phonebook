@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { AuthContainer } from './AuthNav.styled';
 import { NavItem } from 'components/Layout/Layout.styled';
 
