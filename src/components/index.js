@@ -5,4 +5,4 @@ export * from './Layout/Layout';
 export * from './PrivateRoute/PrivateRoute';
 export * from './PublicRoute/PublicRoute';
 export * from './UserMenu/UserMenu';
-export * from './AuthNav';
+export * from './AuthNav/AuthNav';

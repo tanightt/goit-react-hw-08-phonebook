@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { StyledBtn, StyledForm } from './ContactForm.styled';
+import { FormBrn, StyledForm } from './ContactForm.styled';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/contacts/operations';
 
@@ -74,7 +74,13 @@ export const ContactForm = () => {
         value={number}
         required
       />
-      <StyledBtn type="submit">Add contact</StyledBtn>
+      <FormBrn type="submit">
+        <img
+          src="https://www.svgrepo.com/download/460217/add-user-4.svg"
+          alt="add contact"
+          width="30"
+        />
+      </FormBrn>
     </StyledForm>
   );
 };

@@ -2,7 +2,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import { selectContacts, selectFilter } from 'redux/selectors';
-import { DeleteBtn } from './ContactList.styled';
+import {
+  CallBtn,
+  CardContact,
+  CardsContacts,
+  DeleteBtn,
+} from './ContactList.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -16,18 +21,29 @@ export const ContactList = () => {
   );
 
   return (
-    <ul>
+    <CardsContacts>
       {contactsFilter.map(contact => (
-        <li key={contact.id}>
-          {contact.name}: {contact.phone}
+        <CardContact key={contact.id}>
+          <CallBtn href="tel: {contact.number}">
+            <img
+              src="https://www.svgrepo.com/download/317914/contact-phone-2.svg"
+              alt="call contact"
+              width="30"
+            />
+          </CallBtn>
           <DeleteBtn
             type="button"
             onClick={() => dispatch(deleteContact(contact.id))}
           >
-            Delete
+            <img
+              src="https://www.svgrepo.com/download/410021/delete.svg"
+              alt="delete"
+              width="20"
+            />
           </DeleteBtn>
-        </li>
+          {contact.name}: {contact.number}
+        </CardContact>
       ))}
-    </ul>
+    </CardsContacts>
   );
 };

@@ -1,5 +1,5 @@
-import { styled } from 'styled-components';
 import { ContactForm, ContactList, Filter } from 'components';
+import { Card } from './Contacts.styled';
 
 export const Contacts = () => {
   return (
@@ -12,7 +12,3 @@ export const Contacts = () => {
     </Card>
   );
 };
-
-const Card = styled.div`
-  margin-left: 20px;
-`;

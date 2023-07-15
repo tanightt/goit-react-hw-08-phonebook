@@ -1,10 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { loginThunk } from 'redux/auth/authOperations';
+import { LoginBtn, LoginForm } from './Login.styled';
 
 export const Login = () => {
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();
+    console.log('click');
     const { email, password } = e.target.elements;
     const user = {
       [email.name]: email.value,
@@ -16,14 +18,14 @@ export const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <h3>Email</h3>
+      <LoginForm onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        <p>Email</p>
         <input type="email" name="email" required />
-        <h3>Password</h3>
+        <p>Password</p>
         <input type="password" name="password" required />
-        <button type="submit">Login</button>
-      </form>
+        <LoginBtn type="submit">Login</LoginBtn>
+      </LoginForm>
     </>
   );
 };

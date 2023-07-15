@@ -2,17 +2,18 @@ import { useSelector } from 'react-redux';
 import { NavLink, Outlet } from 'react-router-dom';
 import { AuthNav, UserMenu } from 'components';
 import { selectIsLoggedIn } from 'redux/selectors';
+import { LayoutContainer, NavItem } from './Layout.styled';
 
 export const Layout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <>
-      <header>
+      <LayoutContainer>
         <nav>
-          <NavLink to="/">Home</NavLink>
+          <NavItem to="/">Home</NavItem>
         </nav>
         {!isLoggedIn ? <AuthNav /> : <UserMenu />}
-      </header>
+      </LayoutContainer>
       <Outlet />
     </>
   );

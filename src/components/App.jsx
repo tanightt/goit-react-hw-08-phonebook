@@ -7,6 +7,8 @@ import { Contacts, Home, Login, Register } from 'pages';
 import { Layout } from './Layout/Layout';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { Comment } from 'react-loader-spinner';
+import { styled } from 'styled-components';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -15,9 +17,20 @@ export const App = () => {
     dispatch(refreshThunk());
   }, [dispatch]);
   return isRefreshing ? (
-    <p>Loading...</p>
+    <Loader>
+      <Comment
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="comment-loading"
+        wrapperStyle={{}}
+        wrapperClass="comment-wrapper"
+        color="#fff"
+        backgroundColor="#df8e3d"
+      />
+    </Loader>
   ) : (
-    <>
+    <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -44,6 +57,23 @@ export const App = () => {
           <Route path="*" element={<h1> Page is not found! 404 </h1>} />
         </Route>
       </Routes>
-    </>
+    </Container>
   );
 };
+
+const Loader = styled.div`
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+`;
+
+const Container = styled.div`
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(140 96 77);
+  background-image: url('https://images.pexels.com/photos/17568714/pexels-photo-17568714.jpeg');
+`;

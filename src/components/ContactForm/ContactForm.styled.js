@@ -3,12 +3,13 @@ import { styled } from 'styled-components';
 export const StyledForm = styled.form`
   width: 300px;
   padding: 0 15px 15px 15px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 5px;
 `;
-export const StyledBtn = styled.button`
+export const FormBrn = styled.button`
   width: 100px;
   margin-top: 15px;
   padding: 2px;
