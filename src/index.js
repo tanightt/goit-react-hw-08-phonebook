@@ -14,7 +14,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter basename="/goit-react-hw-08-phonebook">
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          {' '}
           <App />
           <ToastContainer autoClose={1000} />
         </PersistGate>

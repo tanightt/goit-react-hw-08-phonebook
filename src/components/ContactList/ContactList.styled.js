@@ -1,7 +1,7 @@
 const { styled } = require('styled-components');
 
 export const CardsContacts = styled.ul`
-  width: 310px;
+  max-width: 340px;
   margin: auto;
   padding: 20px;
   display: flex;

@@ -16,7 +16,7 @@ export const Home = () => {
 };
 
 const HomePage = styled.div`
-  width: 700px;
+  max-width: 700px;
   margin: auto;
   margin-top: 250px;
   text-align: center;

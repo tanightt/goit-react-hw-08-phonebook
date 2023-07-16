@@ -1,4 +1,4 @@
-import { createAsyncThunk, nanoid } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from 'config/instance';
 
 export const fetchContacts = createAsyncThunk(
@@ -18,7 +18,6 @@ export const addContact = createAsyncThunk(
   async ({ name, number }, { rejectWithValue }) => {
     try {
       const { data } = await instance.post('/contacts', {
-        id: nanoid(),
         name,
         number,
       });

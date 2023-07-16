@@ -39,4 +39,8 @@ const FilterContainer = styled.div`
   align-items: inherit;
   justify-content: center;
   gap: 10px;
+  input {
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+  }
 `;

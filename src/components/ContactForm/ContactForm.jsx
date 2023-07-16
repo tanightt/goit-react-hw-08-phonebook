@@ -33,8 +33,8 @@ export const ContactForm = () => {
     }
     dispatch(addContact({ name, number }))
       .unwrap()
-      .then(() => {
-        toast.success(`${name} is added to the contacts!`, {
+      .then(data => {
+        toast.success(`${data.name} is added to the contacts!`, {
           theme: 'dark',
         });
       })

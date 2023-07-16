@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const RegisterForm = styled.form`
-  width: 400px;
+  max-width: 400px;
   padding: 20px;
   margin-left: auto;
   display: flex;
@@ -14,7 +14,7 @@ export const RegisterForm = styled.form`
   );
 
   input {
-    width: 300px;
+    max-width: 300px;
     border: none;
     border-bottom: 1px solid #fff;
     background-color: #8c6e6e;
@@ -34,5 +34,9 @@ export const RegisterBtn = styled.button`
   &:hover {
     background-color: darkcyan;
     color: white;
+  }
+
+  @media (max-width: 330px) {
+    margin-left: 180px;
   }
 `;

@@ -74,6 +74,7 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(140 96 77);
+  background-color: rgba(78, 50, 36, 0.5);
+
   background-image: url('https://images.pexels.com/photos/17568714/pexels-photo-17568714.jpeg');
 `;
