@@ -1,7 +1,7 @@
 const { styled } = require('styled-components');
 
 export const Card = styled.div`
-  padding-bottom: 128px;
+  padding-bottom: 200px;
   margin: 0 auto;
   text-align: center;
   background-position: center;

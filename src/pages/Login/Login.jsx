@@ -6,7 +6,6 @@ export const Login = () => {
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('click');
     const { email, password } = e.target.elements;
     const user = {
       [email.name]: email.value,
